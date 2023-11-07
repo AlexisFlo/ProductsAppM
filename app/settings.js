@@ -1,3 +1,4 @@
+import { Stack } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
@@ -12,6 +13,10 @@ const styles = StyleSheet.create({
 export default function Settings() {
   return (
     <View style={styles.container}>
+      <Stack.Screen options={{
+        title: 'Settings',
+        headerRight: null,
+      }} />
       <Text>Settings</Text>
     </View>
   )
