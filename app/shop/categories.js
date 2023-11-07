@@ -1,3 +1,4 @@
+import { Entypo } from '@expo/vector-icons'
 import { Tabs } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
 
