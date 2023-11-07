@@ -11,7 +11,7 @@ export default function Layout() {
           fontSize: 12,
         },
         tabBarStyle: {
-          backgroundColor: "#BFD9AB"
+          backgroundColor: "#DFECD5"
         }
       }}
     >
