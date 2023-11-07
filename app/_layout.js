@@ -11,7 +11,7 @@ export default function Layout() {
       headerTintColor: '#fff',
       headerBackTitleVisible: false,
       headerRight: () => (
-        <Link href={"/settings"}>
+        <Link href={"/settings"} asChild>
           <Ionicons name="ios-settings-outline" size={22} color="white" />
         </Link>
         )
