@@ -14,20 +14,7 @@ export default function Layout() {
           backgroundColor: "#F4F9F1"
         }
       }}
-    >
-      <Tabs.Screen
-        name="products"
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <Ionicons
-              name={focused ? "basket" : "basket-outline"}
-              size={22}
-              color="#85A43D"
-            />
-          ),
-          tabBarLabel: "Products",
-        }}
-      />
+      >
       <Tabs.Screen
         name="categories"
         options={{
@@ -39,6 +26,19 @@ export default function Layout() {
             />
           ),
           tabBarLabel: "Categories",
+        }}
+      />
+      <Tabs.Screen
+        name="products"
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name={focused ? "basket" : "basket-outline"}
+              size={22}
+              color="#85A43D"
+            />
+          ),
+          tabBarLabel: "Products",
         }}
       />
     </Tabs>
