@@ -1,1 +1,1 @@
-import 'expo-router/_entry'
+import 'expo-router/entry'
