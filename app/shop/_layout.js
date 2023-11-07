@@ -1,5 +1,4 @@
-import { Ionicons } from '@expo/vector-icons'
-import { Entypo } from '@expo/vector-icons'
+import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 
 export default function Layout() {
@@ -7,21 +6,40 @@ export default function Layout() {
     <Tabs
       screenOptions={{
         headerShown: false,
+        tabBarActiveTintColor: "#85A43D",
+        tabBarLabelStyle:{
+          fontSize: 12,
+        },
+        tabBarStyle: {
+          backgroundColor: "#BFD9AB"
+        }
       }}
     >
-      <Tabs.Screen name="products" 
+      <Tabs.Screen
+        name="products"
         options={{
-          tabBarIcon: () => (
-            <Ionicons name="basket" size={22} color='#85A43D' />),
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name={focused ? "basket" : "basket-outline"}
+              size={22}
+              color="#85A43D"
+            />
+          ),
+          tabBarLabel: "Products",
         }}
       />
-      <Tabs.Screen 
+      <Tabs.Screen
         name="categories"
         options={{
-          tabBarIcon: () => (
-            <Entypo name="add-to-list" size={22} color='#85A43D' />
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name={focused ? "ios-list" : "ios-list-outline"}
+              size={22}
+              color="#85A43D"
+            />
           ),
-        }} 
+          tabBarLabel: "Categories",
+        }}
       />
     </Tabs>
   );
