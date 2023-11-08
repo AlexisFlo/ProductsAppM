@@ -43,6 +43,9 @@ export default function Home() {
             ))}
           </ScrollView>
         </View>
+        {PRODUCTS.map((product) => (
+          <Card {...product} key={product.id} />
+        ))}
       </ScrollView>
 
       <Link href="/shop/categories">Go to categories</Link>
