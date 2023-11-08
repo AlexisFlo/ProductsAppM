@@ -3,6 +3,8 @@ import { StyleSheet, Dimensions } from "react-native";
 const { width } = Dimensions.get("window");
 
 export const CARD_HEIGHT = width;
+export const TOP = 10;
+export const SIZE = 160;
 
 export const styles = StyleSheet.create({
   container: {
@@ -15,6 +17,10 @@ export const styles = StyleSheet.create({
     padding: 15,
     justifyContent: "space-between",
     borderRadius: 15,
+  },
+  cardContent: {
+    justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     fontSize: 25,
@@ -29,10 +35,10 @@ export const styles = StyleSheet.create({
     color: "#fff",
   },
   image: {
-    ...StyleSheet.absoluteFillObject,
-    width: undefined,
-    height: undefined,
+    width: SIZE,
+    height: SIZE,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
+    top: TOP,
   },
 });
