@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   card: {
-    felx: 1,
+    flex: 1,
     margin: 30,
     padding: 15,
     justifyContent: "space-between",
