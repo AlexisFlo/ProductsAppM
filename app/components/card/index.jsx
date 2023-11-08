@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 
 import { styles } from "./styles";
 import CardHeader from "../card-header";
@@ -6,6 +6,7 @@ import CardHeader from "../card-header";
 const Card = ({
   title,
   subtitle,
+  image,
   primaryColor,
   secondaryColor,
   headerTitle,
@@ -20,6 +21,7 @@ const Card = ({
           headerIcon={headerIcon}
           headerIconColor={headerIconColor}
         />
+        <Image style={styles.image} source={image} />
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subtitle}>{subtitle}</Text>
       </View>

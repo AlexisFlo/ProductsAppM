@@ -2,11 +2,12 @@ import { StyleSheet, Dimensions } from "react-native";
 
 const { width } = Dimensions.get("window");
 
-export const CARD_WIDTH = width * 0.6;
+export const CARD_HEIGHT = width;
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    width,
+    height: CARD_HEIGHT,
   },
   card: {
     flex: 1,
@@ -26,5 +27,12 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: "center",
     color: "#fff",
+  },
+  image: {
+    ...StyleSheet.absoluteFillObject,
+    width: undefined,
+    height: undefined,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
   },
 });
