@@ -6,18 +6,20 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     justifyContent: "center",
-    alignItems: 'center'
-  }
-}); 
+    alignItems: "center",
+  },
+});
 
 export default function Settings() {
   return (
     <View style={styles.container}>
-      <Stack.Screen options={{
-        title: 'Settings',
-        headerRight: null,
-      }} />
+      <Stack.Screen
+        options={{
+          title: "Settings",
+          headerRight: null,
+        }}
+      />
       <Text>Settings</Text>
     </View>
-  )
+  );
 }

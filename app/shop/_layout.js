@@ -7,23 +7,18 @@ export default function Layout() {
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: "#85A43D",
-        tabBarLabelStyle:{
+        tabBarLabelStyle: {
           fontSize: 12,
         },
         tabBarStyle: {
-          backgroundColor: "#F4F9F1"
-        }
-      }}
-      >
+          backgroundColor: "#F4F9F1",
+        },
+      }}>
       <Tabs.Screen
         name="categories"
         options={{
           tabBarIcon: ({ focused }) => (
-            <Ionicons
-              name={focused ? "ios-list" : "ios-list-outline"}
-              size={22}
-              color="#85A43D"
-            />
+            <Ionicons name={focused ? "ios-list" : "ios-list-outline"} size={22} color="#85A43D" />
           ),
           tabBarLabel: "Categories",
         }}
@@ -32,11 +27,7 @@ export default function Layout() {
         name="products"
         options={{
           tabBarIcon: ({ focused }) => (
-            <Ionicons
-              name={focused ? "basket" : "basket-outline"}
-              size={22}
-              color="#85A43D"
-            />
+            <Ionicons name={focused ? "basket" : "basket-outline"} size={22} color="#85A43D" />
           ),
           tabBarLabel: "Products",
         }}

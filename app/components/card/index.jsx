@@ -1,4 +1,5 @@
 import { View, Text } from "react-native";
+
 import styles from "./styles";
 
 const Card = ({ title, subtitle, primaryColor, secondaryColor }) => {
@@ -9,7 +10,7 @@ const Card = ({ title, subtitle, primaryColor, secondaryColor }) => {
         <Text style={styles.subtitle}>{subtitle}</Text>
       </View>
     </View>
-  )
-}
+  );
+};
 
 export default Card;

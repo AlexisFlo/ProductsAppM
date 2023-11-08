@@ -5,15 +5,14 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     justifyContent: "center",
-    alignItems: 'center'
-  }
+    alignItems: "center",
+  },
 });
-
 
 export default function Categories() {
   return (
     <View style={styles.container}>
       <Text>Categories</Text>
     </View>
-  )
+  );
 }
