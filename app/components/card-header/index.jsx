@@ -1,6 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
-import { View, Text } from "react-native";
-
+import { Text, View } from "react-native";
 import { styles } from "./styles";
 
 const CardHeader = ({ headerTitle, headerIcon, headerIconColor }) => {

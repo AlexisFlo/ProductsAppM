@@ -4,7 +4,6 @@ export const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     padding: 15,
-    marginBottom: 15,
     alignItems: "center",
   },
   header: {
@@ -14,10 +13,13 @@ export const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 14,
+    color: "#ffffff",
+    fontWeight: "medium",
   },
   headerAction: {
     flexDirection: "row",
     justifyContent: "flex-end",
     alignSelf: "center",
+    borderStartColor: "#000000",
   },
 });
