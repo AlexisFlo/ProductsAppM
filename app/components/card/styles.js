@@ -1,8 +1,9 @@
 import { StyleSheet, Dimensions } from "react-native";
 
+import { CARD_HEIGHT } from ".";
+
 const { width } = Dimensions.get("window");
 
-export const CARD_HEIGHT = width;
 export const TOP = 10;
 export const SIZE = 160;
 
@@ -10,6 +11,8 @@ export const styles = StyleSheet.create({
   container: {
     width,
     height: CARD_HEIGHT,
+    justifyContent: "center",
+    alignItems: "center",
   },
   card: {
     flex: 1,
