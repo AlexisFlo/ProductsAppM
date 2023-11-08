@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 
-import styles from "./styles";
+import { styles } from "./styles";
 
 const Card = ({ title, subtitle, primaryColor, secondaryColor }) => {
   return (
