@@ -39,6 +39,5 @@ export const styles = StyleSheet.create({
     height: SIZE,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
-    top: TOP,
   },
 });

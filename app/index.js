@@ -1,10 +1,11 @@
 import { Link, Stack } from "expo-router";
-import { View, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView, Dimensions } from "react-native";
 
 import { Card } from "./components";
 import { PRODUCTS } from "./constants/data";
 import { CARD_HEADERS } from "./constants/data/card-header";
 
+const { width } = Dimensions.get("window");
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -26,7 +27,11 @@ export default function Home() {
       />
       <ScrollView bounces={false} showsVerticalScrollIndicator={false}>
         <View style={styles.slider}>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <ScrollView
+            decelerationRate="fast"
+            snapToInterval={width}
+            horizontal
+            showsHorizontalScrollIndicator={false}>
             {PRODUCTS.map((product) => (
               <Card
                 {...product}
