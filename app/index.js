@@ -1,5 +1,5 @@
 import { Link, Stack } from "expo-router";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 
 import { Card } from "./components";
 import { PRODUCTS } from "./constants/data";
@@ -24,9 +24,9 @@ export default function Home() {
           title: "Home",
         }}
       />
-      <ScrollView>
-        <View>
-          <ScrollView horizontal>
+      <ScrollView bounces={false} showsVerticalScrollIndicator={false}>
+        <View style={styles.slider}>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {PRODUCTS.map((product) => (
               <Card
                 {...product}
