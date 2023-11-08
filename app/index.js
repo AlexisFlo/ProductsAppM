@@ -1,5 +1,7 @@
 import { Link, Stack } from 'expo-router'
-import { View, Text, StyleSheet} from 'react-native'
+import { View, Text, StyleSheet, ScrollView} from 'react-native'
+import { PRODUCTS } from './constants/data'
+import { Card } from './components'
 
 const styles = StyleSheet.create({
   container: {
@@ -16,7 +18,19 @@ export default function Home() {
       <Stack.Screen options={{
         title: 'Home',
       }} />
-      <Text>Home</Text>
+      <ScrollView>
+        <View>
+          <ScrollView horizontal>
+            {
+              PRODUCTS.map((product) => (
+                <Card {...product} key={product.id} />
+              ))
+            }
+          </ScrollView>
+        </View>
+      </ScrollView> 
+
+
       <Link href={"/shop/categories"}>Go to categories</Link>
     </View>
   )
