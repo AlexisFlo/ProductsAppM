@@ -41,6 +41,10 @@ export default function Home() {
       PRODUCTS.map((product) => product.primaryColor)
     ),
   }));
+
+  const onSelect = (text) => {
+    console.log(text);
+  };
   return (
     <Animated.View style={style}>
       <Stack.Screen
@@ -70,6 +74,7 @@ export default function Home() {
                 headerIconColor={headerIconColor}
                 x={translateX}
                 index={index}
+                onSelect={onSelect}
               />
             ))}
           </Animated.ScrollView>

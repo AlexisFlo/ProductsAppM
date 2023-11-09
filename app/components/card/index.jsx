@@ -1,4 +1,4 @@
-import { View, Text, Image, Dimensions } from "react-native";
+import { View, Text, Dimensions, TouchableOpacity } from "react-native";
 import Animated, { interpolate, useAnimatedStyle } from "react-native-reanimated";
 
 import { styles } from "./styles";
@@ -14,11 +14,14 @@ const Card = ({
   image,
   primaryColor,
   secondaryColor,
+  price,
+  id,
   headerTitle,
   headerIcon,
   headerIconColor,
   x,
   index,
+  onSelect,
 }) => {
   const style = useAnimatedStyle(() => {
     const inputRange = [width * (index - 1), width * index, width * (index + 1)];
@@ -28,20 +31,23 @@ const Card = ({
       transform: [{ translateX }, { scale }],
     };
   });
+
   return (
     <Animated.View style={[styles.container, style]}>
-      <View style={[styles.card, { backgroundColor: primaryColor }]}>
-        <View style={styles.cardContent}>
-          <CardHeader
-            headerTitle={headerTitle}
-            headerIcon={headerIcon}
-            headerIconColor={headerIconColor}
-          />
-          <Animated.Image style={styles.image} source={{ uri: image }} resizeMode="contain" />
-          <Text style={styles.title}>{title}</Text>
-          <Text style={styles.subtitle}>{subtitle}</Text>
+      <TouchableOpacity onPress={() => onSelect("hola")}>
+        <View style={[styles.card, { backgroundColor: primaryColor }]}>
+          <View style={styles.cardContent}>
+            <CardHeader
+              headerTitle={headerTitle}
+              headerIcon={headerIcon}
+              headerIconColor={headerIconColor}
+            />
+            <Animated.Image style={styles.image} source={{ uri: image }} resizeMode="contain" />
+            <Text style={styles.title}>{title}</Text>
+            <Text style={styles.subtitle}>{subtitle}</Text>
+          </View>
         </View>
-      </View>
+      </TouchableOpacity>
     </Animated.View>
   );
 };
