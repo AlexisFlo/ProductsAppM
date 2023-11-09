@@ -1,5 +1,11 @@
 import { Link, Stack } from "expo-router";
 import { View, StyleSheet, ScrollView, Dimensions } from "react-native";
+import Animated, {
+  useAnimatedScrollHandler,
+  useSharedValue,
+  useAnimatedStyle,
+  interpolateColor,
+} from "react-native-reanimated";
 
 import { Card } from "./components";
 import { CARD_HEIGHT } from "./components/card";
@@ -11,8 +17,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
   },
 });
 
@@ -21,8 +25,24 @@ const { headerIcon, headerIconColor, headerTitle } = CARD_HEADERS.Home.Slider;
 const snapToOffsets = [0, CARD_HEIGHT];
 
 export default function Home() {
+  const translateX = useSharedValue(0);
+
+  const onScroll = useAnimatedScrollHandler({
+    onScroll: ({ contentOffset: { x } }) => {
+      translateX.value = x;
+    },
+  });
+
+  const style = useAnimatedStyle(() => ({
+    ...styles.container,
+    backgroundColor: interpolateColor(
+      translateX.value,
+      PRODUCTS.map((_, i) => i * width),
+      PRODUCTS.map((product) => product.primaryColor)
+    ),
+  }));
   return (
-    <View style={styles.container}>
+    <Animated.View style={style}>
       <Stack.Screen
         options={{
           title: "Home",
@@ -34,7 +54,8 @@ export default function Home() {
         snapToOffsets={snapToOffsets}
         decelerationRate="fast">
         <View style={styles.slider}>
-          <ScrollView
+          <Animated.ScrollView
+            onScroll={onScroll}
             decelerationRate="fast"
             snapToInterval={width}
             horizontal
@@ -48,7 +69,7 @@ export default function Home() {
                 headerIconColor={headerIconColor}
               />
             ))}
-          </ScrollView>
+          </Animated.ScrollView>
         </View>
         {PRODUCTS.map((product) => (
           <Card {...product} key={product.id} />
@@ -56,6 +77,6 @@ export default function Home() {
       </ScrollView>
 
       <Link href="/shop/categories">Go to categories</Link>
-    </View>
+    </Animated.View>
   );
 }
