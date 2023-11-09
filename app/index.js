@@ -42,8 +42,8 @@ export default function Home() {
     ),
   }));
 
-  const onSelect = (text) => {
-    console.log(text);
+  const onSelect = ({ title }) => {
+    console.log(title);
   };
   return (
     <Animated.View style={style}>

@@ -34,7 +34,7 @@ const Card = ({
 
   return (
     <Animated.View style={[styles.container, style]}>
-      <TouchableOpacity onPress={() => onSelect("hola")}>
+      <TouchableOpacity onPress={() => onSelect({ title })}>
         <View style={[styles.card, { backgroundColor: primaryColor }]}>
           <View style={styles.cardContent}>
             <CardHeader
