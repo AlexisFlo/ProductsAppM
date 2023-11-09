@@ -37,7 +37,7 @@ const Card = ({
             headerIcon={headerIcon}
             headerIconColor={headerIconColor}
           />
-          <Image style={styles.image} source={{ uri: image }} resizeMode="contain" />
+          <Animated.Image style={styles.image} source={{ uri: image }} resizeMode="contain" />
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.subtitle}>{subtitle}</Text>
         </View>
