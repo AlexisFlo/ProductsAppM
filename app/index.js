@@ -46,9 +46,7 @@ export default function Home() {
     const product = { title, subtitle, price, image, id };
     router.push({
       pathname: "/shop/products",
-      params: {
-        product,
-      },
+      params: product,
     });
   };
 
