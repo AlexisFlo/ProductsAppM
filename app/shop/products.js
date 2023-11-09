@@ -30,7 +30,12 @@ export default function Products() {
 
   return (
     <View style={styles.container}>
-      <FlatList data={data} renderItem={renderItem} keyExtractor={(item) => item.id.toString()} />
+      <FlatList
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id.toString()}
+        contentContainerStyle={styles.contentContainerList}
+      />
     </View>
   );
 }
