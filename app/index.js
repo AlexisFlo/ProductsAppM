@@ -42,8 +42,15 @@ export default function Home() {
     ),
   }));
 
-  const onSelect = ({ title }) => {
-    console.log(title);
+  const onSelect = ({ title, price, id, image, subtitle }) => {
+    const product = {
+      title,
+      price,
+      id,
+      image,
+      subtitle,
+    };
+    console.log(product);
   };
   return (
     <Animated.View style={style}>
