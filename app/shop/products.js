@@ -3,8 +3,6 @@ import { Tabs, useLocalSearchParams, useRouter } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 
-import { ProductItem } from "../components";
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
