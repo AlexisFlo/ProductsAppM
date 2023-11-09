@@ -61,20 +61,22 @@ export default function Home() {
             horizontal
             showsHorizontalScrollIndicator={false}
             scrolEventThrottle={16}>
-            {PRODUCTS.map((product) => (
+            {PRODUCTS?.map((product, index) => (
               <Card
                 {...product}
                 key={product.id}
                 headerTitle={headerTitle}
                 headerIcon={headerIcon}
                 headerIconColor={headerIconColor}
+                x={translateX}
+                index={index}
               />
             ))}
           </Animated.ScrollView>
         </View>
-        {PRODUCTS.map((product) => (
+        {/*{PRODUCTS.map((product) => (
           <Card {...product} key={product.id} />
-        ))}
+        ))}*/}
       </ScrollView>
 
       <Link href="/shop/categories">Go to categories</Link>

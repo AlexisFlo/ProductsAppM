@@ -1,4 +1,5 @@
 import { View, Text, Image, Dimensions } from "react-native";
+import Animated, { interpolate, useAnimatedStyle } from "react-native-reanimated";
 
 import { styles } from "./styles";
 import CardHeader from "../card-header";
@@ -16,9 +17,19 @@ const Card = ({
   headerTitle,
   headerIcon,
   headerIconColor,
+  x,
+  index,
 }) => {
+  const style = useAnimatedStyle(() => {
+    const inputRange = [width * (index - 1), width * index, width * (index + 1)];
+    const translateX = interpolate(x.value, inputRange, [width / 2, 0, width / 2]);
+    const scale = interpolate(x.value, inputRange, [0.5, 1, 0.5]);
+    return {
+      transform: [{ translateX }, { scale }],
+    };
+  });
   return (
-    <View style={styles.container}>
+    <Animated.View style={[styles.container, style]}>
       <View style={[styles.card, { backgroundColor: primaryColor }]}>
         <View style={styles.cardContent}>
           <CardHeader
@@ -31,7 +42,7 @@ const Card = ({
           <Text style={styles.subtitle}>{subtitle}</Text>
         </View>
       </View>
-    </View>
+    </Animated.View>
   );
 };
 
