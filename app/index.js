@@ -1,4 +1,4 @@
-import { Link, Stack } from "expo-router";
+import { Stack, router } from "expo-router";
 import { View, StyleSheet, ScrollView, Dimensions } from "react-native";
 import Animated, {
   useAnimatedScrollHandler,
@@ -42,16 +42,16 @@ export default function Home() {
     ),
   }));
 
-  const onSelect = ({ title, price, id, image, subtitle }) => {
-    const product = {
-      title,
-      price,
-      id,
-      image,
-      subtitle,
-    };
-    console.log(product);
+  const onSelect = ({ title, subtitle, price, image, id }) => {
+    const product = { title, subtitle, price, image, id };
+    router.push({
+      pathname: "/shop/products",
+      params: {
+        product,
+      },
+    });
   };
+
   return (
     <Animated.View style={style}>
       <Stack.Screen
@@ -90,8 +90,6 @@ export default function Home() {
           <Card {...product} key={product.id} />
         ))}*/}
       </ScrollView>
-
-      <Link href="/shop/categories">Go to categories</Link>
     </Animated.View>
   );
 }
