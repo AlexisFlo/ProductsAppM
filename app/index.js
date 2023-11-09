@@ -59,7 +59,8 @@ export default function Home() {
             decelerationRate="fast"
             snapToInterval={width}
             horizontal
-            showsHorizontalScrollIndicator={false}>
+            showsHorizontalScrollIndicator={false}
+            scrolEventThrottle={16}>
             {PRODUCTS.map((product) => (
               <Card
                 {...product}
