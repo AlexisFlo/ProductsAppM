@@ -2,6 +2,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { Tabs, useLocalSearchParams, useRouter } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
+
 import { ProductItem } from "../components";
 
 const styles = StyleSheet.create({
@@ -20,9 +21,7 @@ export default function Products() {
   const router = useRouter();
   const params = useLocalSearchParams();
 
-  const renderItem = ({ item }) => {
-    return <ProductItem />;
-  };
+  const renderItem = ({ item }) => <ProductItem />;
 
   console.warn({ params });
   return (
