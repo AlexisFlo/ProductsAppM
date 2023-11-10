@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import { Button, TextInput, View } from 'react-native';
-import { insertOrder } from '../../database'
+import React, { useState } from "react";
+import { Button, TextInput, View } from "react-native";
+
+import { insertOrder } from "../../database";
 
 const ProductRegistrationScreen = () => {
-  const [product, setProduct] = useState('');
-  const [quantity, setQuantity] = useState('');
-  const [price, setPrice] = useState('');
+  const [product, setProduct] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [price, setPrice] = useState("");
 
   const handleRegister = () => {
     insertOrder(product, quantity, price);
@@ -14,11 +15,7 @@ const ProductRegistrationScreen = () => {
 
   return (
     <View>
-      <TextInput
-        placeholder="Producto"
-        value={product}
-        onChangeText={setProduct}
-      />
+      <TextInput placeholder="Producto" value={product} onChangeText={setProduct} />
       <TextInput
         placeholder="Cantidad"
         value={quantity}
@@ -31,10 +28,7 @@ const ProductRegistrationScreen = () => {
         onChangeText={setPrice}
         keyboardType="numeric"
       />
-      <Button
-        title="Registrar Producto"
-        onPress={handleRegister}
-      />
+      <Button title="Registrar Producto" onPress={handleRegister} />
     </View>
   );
 };
