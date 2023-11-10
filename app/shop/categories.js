@@ -1,18 +1,42 @@
-import { View, Text, StyleSheet } from "react-native";
+import React, { useState } from 'react';
+import { Button, TextInput, View } from 'react-native';
+import { insertOrder } from '../../database'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
+const ProductRegistrationScreen = () => {
+  const [product, setProduct] = useState('');
+  const [quantity, setQuantity] = useState('');
+  const [price, setPrice] = useState('');
 
-export default function Categories() {
+  const handleRegister = () => {
+    insertOrder(product, quantity, price);
+    console.log(`Registrando producto: ${product}, Cantidad: ${quantity}, Precio: ${price}`);
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Categories</Text>
+    <View>
+      <TextInput
+        placeholder="Producto"
+        value={product}
+        onChangeText={setProduct}
+      />
+      <TextInput
+        placeholder="Cantidad"
+        value={quantity}
+        onChangeText={setQuantity}
+        keyboardType="numeric"
+      />
+      <TextInput
+        placeholder="Precio"
+        value={price}
+        onChangeText={setPrice}
+        keyboardType="numeric"
+      />
+      <Button
+        title="Registrar Producto"
+        onPress={handleRegister}
+      />
     </View>
   );
-}
+};
+
+export default ProductRegistrationScreen;
