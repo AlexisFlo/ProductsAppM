@@ -8,14 +8,21 @@ db.transaction((tx) => {
   );
 });
 
-const insertOrder = (product, quantity, price) => {
+export const insertOrder = (product, quantity, price) => {
   db.transaction((tx) => {
     tx.executeSql("select * from ORDERS", [], (_, { rows }) => console.log(JSON.stringify(rows)));
   });
 };
 
-const getOrders = () => {
-  db.transaction((tx) => {
-    tx.executeSql("select * from ORDERS", [], (_, { rows }) => console.log(JSON.stringify(rows)));
+export const getOrders = () => {
+  return new Promise((resolve, reject) => {
+    db.transaction((tx) => {
+      tx.executeSql(
+        "select * from ORDERS",
+        [],
+        (_, { rows: { _array } }) => resolve(_array),
+        (_, error) => reject(error)
+      );
+    });
   });
 };

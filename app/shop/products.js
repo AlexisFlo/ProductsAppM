@@ -1,7 +1,8 @@
-import { Ionicons } from "@expo/vector-icons";
-import { Tabs, useLocalSearchParams, useRouter } from "expo-router";
-import { View, Text, StyleSheet } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, StyleSheet } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
+
+import { getOrders } from "../../database";
 
 const styles = StyleSheet.create({
   container: {
@@ -21,10 +22,14 @@ const styles = StyleSheet.create({
   },
 });
 
-const data = new Array(15).fill(0).map((_, index) => ({ id: index }));
 export default function Products() {
-  const router = useRouter();
-  const params = useLocalSearchParams();
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    getOrders()
+      .then((orders) => setData(orders))
+      .catch((error) => console.error(error));
+  }, []);
 
   const renderItem = ({ item }) => <View style={styles.item} />;
 
