@@ -1,11 +1,11 @@
 import { Platform } from 'react-native';
-import { Database } from '@nozbe/watermelondb';
+import { Database, Model } from '@nozbe/watermelondb';
+import { date, field, text } from '@nozbe/watermelondb/decorators'
 import SQLiteAdapter from '@nozbe/watermelondb/adapters/sqlite';
 
 import schema from './model/schema';
 import migrations from './model/migrations';
-import { error } from 'console';
-// import Post from '.model/Post' // I'll import my models here
+import Post from './model/Post' // I'll import my models here
 
 // First , create the adapter to the underlaying database:
 
@@ -24,7 +24,19 @@ const adapter = new SQLiteAdapter({
 // Then, make a watermelon database from it!
 const database = new Database({
   adapter,
-  modelClasses:[
-    // Post, You'll add Models to Watermelon here
-  ]
+  modelClasses:[Post] // You'll add Models to Watermelon here
 })
+
+// Associations
+
+class Post extends Model {
+  static table = 'posts'
+  static associations = {
+    posts: { type: 'belongs_to', key: 'post_id' },
+  }
+
+  @text('title') title
+  @text('body') body
+  @field('is_pinned') isPinned
+  @date('last_event_at') lastEventAt
+}
