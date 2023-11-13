@@ -10,6 +10,11 @@ module.exports = function (api) {
           relativeSourceLocation: true,
         },
       ],
+      ["@babel/plugin-proposal-decorators", 
+        {
+          "legacy": true
+        }
+      ]
     ],
   };
 };
