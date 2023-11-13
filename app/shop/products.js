@@ -21,14 +21,16 @@ export default function Products() {
   const params = useLocalSearchParams();
   const viewableItems = useSharedValue([]);
 
-  const renderItem = ({ item }) => <ProductItem />;
+  const renderItem = ({ item, index }) => (
+    <ProductItem item={item} index={index} visibleItems={viewableItems} />
+  );
 
   return (
     <View style={styles.container}>
       <FlatList
         data={data}
         onViewableItemsChanged={({ viewableItems: visibleItems }) => {
-          viewableItems.value = viewableItems;
+          viewableItems.value = visibleItems;
         }}
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
