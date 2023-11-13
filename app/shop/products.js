@@ -1,20 +1,13 @@
-import { Ionicons } from "@expo/vector-icons";
-import { Tabs, useLocalSearchParams, useRouter } from "expo-router";
-import { View, Text, StyleSheet } from "react-native";
+import { useLocalSearchParams, useRouter } from "expo-router";
+import { View, StyleSheet } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
+
+import { ProductItem } from "../components";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-  },
-  item: {
-    height: 150,
-    width: "90%",
-    backgroundColor: "#B8B6E2",
-    alignSelf: "center",
-    borderRadius: 10,
-    marginTop: 15,
   },
   contentContainerList: {
     paddingTop: 40,
@@ -26,7 +19,7 @@ export default function Products() {
   const router = useRouter();
   const params = useLocalSearchParams();
 
-  const renderItem = ({ item }) => <View style={styles.item} />;
+  const renderItem = ({ item }) => <ProductItem />;
 
   return (
     <View style={styles.container}>
