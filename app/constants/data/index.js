@@ -15,7 +15,8 @@ export const PRODUCTS = [
     title: "Carnes rojas",
     subtitle: "Liquid Retina XDR display or Liquid Retina displayFootnote², M2 chip",
     price: 799,
-    image: "https://purepng.com/public/uploads/large/purepng.com-meatfood-meat-red-fresh-grill-cook-beef-steak-941524623783d4pop.png",
+    image:
+      "https://purepng.com/public/uploads/large/purepng.com-meatfood-meat-red-fresh-grill-cook-beef-steak-941524623783d4pop.png",
     primaryColor: "#697d88",
     secondaryColor: "#BA8CCF",
     aspectRatio: 1,
@@ -28,16 +29,17 @@ export const PRODUCTS = [
     price: 799,
     image:
       "https://th.bing.com/th/id/R.196b1d34cf24aa7de665f5e0af46f7a8?rik=V3BBWRIV%2fjTanA&riu=http%3a%2f%2fwww.freepngimg.com%2fdownload%2ffruit%2f4-2-fruit-png-image.png&ehk=uSDRktxcvDdYjk%2bmvt638SZo0enEYfy7T%2bdpYwCGIto%3d&risl=&pid=ImgRaw&r=0",
-      primaryColor: "#818a99",
-      secondaryColor: "#95939F",
+    primaryColor: "#818a99",
+    secondaryColor: "#95939F",
     aspectRatio: 1,
   },
   {
     id: 4,
-    title: 'Pescado y mariscos',
+    title: "Pescado y mariscos",
     subtitle: "Apple M2 Pro with 12‑core CPU, 19‑core GPU, 16‑core Neural Engine",
     price: 2499,
-    image: "https://th.bing.com/th/id/R.606a7da058e263c2120a29af04b899a5?rik=7J2Y1pdaDugksQ&pid=ImgRaw&r=0",
+    image:
+      "https://th.bing.com/th/id/R.606a7da058e263c2120a29af04b899a5?rik=7J2Y1pdaDugksQ&pid=ImgRaw&r=0",
     primaryColor: "#9998a7",
     secondaryColor: "#F4A4A6",
     aspectRatio: 1,
