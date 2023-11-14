@@ -1,21 +1,17 @@
-import { SyncDatabaseChangeSet, synchronize } from '@nozbe/watermelondb/sync'
+import 'react-native-url-polyfill/auto'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { createClient } from '@supabase/supabase-js'
+import { database } from './watermelon'
 
-await synchronize({
-  database,
-  pullChanges: async ({ lastPulledAt, schemaVersion, migration }) => {
-    const { data, error } = await supabase.rpc('pull', {
-      last_pulled_at: lastPulledAt,
-    })
+// const supabaseUrl = REACT_NATIVE_SUPABASE_URL
+// const supabaseAnonKey = REACT_NATIVE_SUPABASE_ANON_KEY
 
-    const { changes, timestamp } = data as {
-      changes: SyncDatabaseChangeSet
-      timestamp: number
-    }
-
-    return { changes, timestamp }
+/* export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: {
+    storage: AsyncStorage,
+    autoRefreshToken: true,
+    persistSession: true,
+    detectSessionInUrl: false,
   },
-  pushChanges: async ({ changes, lastPulledAt }) => {
-    const { error } = await supabase.rpc('push', { changes })
-  },
-  sendCreatedAsUpdated: true,
 })
+*/
