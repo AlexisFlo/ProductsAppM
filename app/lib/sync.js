@@ -1,5 +1,7 @@
 import { synchronize } from '@nozbe/watermelondb/sync'
 
+import { supbase } from './supabase'
+
 async function mySync() {
   await synchronize({
     database,
