@@ -1,5 +1,5 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { useSharedValue } from "react-native-reanimated";
 
@@ -13,6 +13,15 @@ const styles = StyleSheet.create({
   contentContainerList: {
     paddingTop: 40,
   },
+  header: {
+    fontSize: 22,
+    color: "#000",
+    fontWeight: "bold",
+  },
+  headerContainer: {
+    padding: 20,
+    textAlign: "center",
+  },
 });
 
 const data = new Array(15).fill(0).map((_, index) => ({ id: index }));
@@ -22,11 +31,18 @@ export default function Products() {
   const viewableItems = useSharedValue([]);
 
   const renderItem = ({ item, index }) => (
-    <ProductItem item={item} index={index} visibleItems={viewableItems} />
+    <ProductItem item={item} index={index} viewableItems={viewableItems} />
+  );
+
+  const ListHeaderComponent = () => (
+    <View style={styles.headerContainer}>
+      <Text style={styles.header}>Feature Products</Text>
+    </View>
   );
 
   return (
     <View style={styles.container}>
+      <ListHeaderComponent />
       <FlatList
         data={data}
         onViewableItemsChanged={({ viewableItems: visibleItems }) => {
