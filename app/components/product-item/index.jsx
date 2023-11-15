@@ -1,14 +1,23 @@
 import { memo } from "react";
-import Animated, { useAnimatedStyle } from "react-native-reanimated";
+import Animated, { useAnimatedStyle, withTiming } from "react-native-reanimated";
 
 import { styles } from "./styles";
 
 const ProductItem = memo(({ item, index, viewableItems }) => {
   const style = useAnimatedStyle(() => {
-    const isVisible = viewableItems.value.filter((item) => item.isViewable);
-    console.warn({ isVisible });
+    const isVisible = Boolean(
+      viewableItems.value
+        .filter((item) => item.isViewable)
+        .find((viewableItem) => viewableItem.item.id === item.id)
+    );
+
     return {
-      opacity: 1,
+      opacity: withTiming(isVisible ? 1 : 0),
+      transform: [
+        {
+          scale: withTiming(isVisible ? 1 : 0.5),
+        },
+      ],
     };
   }, []);
   return <Animated.View style={[styles.item, style]} />;
