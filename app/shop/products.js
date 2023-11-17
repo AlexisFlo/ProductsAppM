@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   contentContainerList: {
-    paddingTop: 40,
+    paddingTop: 15,
   },
   header: {
     fontSize: 22,
@@ -29,6 +29,7 @@ export default function Products() {
   const router = useRouter();
   const params = useLocalSearchParams();
   const viewableItems = useSharedValue([]);
+  const { title, subtitle, image, price } = params;
 
   const renderItem = ({ item, index }) => (
     <ProductItem item={item} index={index} viewableItems={viewableItems} />
@@ -42,6 +43,12 @@ export default function Products() {
 
   return (
     <View style={styles.container}>
+      <View style={styles.product}>
+        <Text>{title}</Text>
+        <Text>{subtitle}</Text>
+        <Text>{image}</Text>
+        <Text>{price}</Text>
+      </View>
       <ListHeaderComponent />
       <FlatList
         data={data}

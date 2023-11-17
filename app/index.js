@@ -1,5 +1,5 @@
 import { Stack, router } from "expo-router";
-import { View, StyleSheet, ScrollView, Dimensions } from "react-native";
+import { View, StyleSheet, ScrollView, Dimensions, Pressable, Text } from "react-native";
 import Animated, {
   useAnimatedScrollHandler,
   useSharedValue,
@@ -17,6 +17,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+  },
+  button: {
+    padding: 20,
+    backgroundColor: "#3B5249",
+    borderRadius: 15,
+    margin: 20,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttonText: {
+    fontSize: 13,
+    fpntWeight: "bold",
+    color: "#fff",
   },
 });
 
@@ -47,6 +60,11 @@ export default function Home() {
     router.push({
       pathname: "/shop/products",
       params: product,
+    });
+  };
+  const addProduct = () => {
+    router.push({
+      pathname: "/shop/categories",
     });
   };
 
@@ -88,6 +106,9 @@ export default function Home() {
           <Card {...product} key={product.id} />
         ))}*/}
       </ScrollView>
+      <Pressable onPress={addProduct} style={styles.button}>
+        <Text style={styles.buttonText}>Agregar productos</Text>
+      </Pressable>
     </Animated.View>
   );
 }
