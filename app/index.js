@@ -1,5 +1,13 @@
 import { Stack, router } from "expo-router";
-import { View, StyleSheet, ScrollView, Dimensions, Pressable, Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  ScrollView,
+  Dimensions,
+  Pressable,
+  Text,
+  TouchableOpacity,
+} from "react-native";
 import Animated, {
   useAnimatedScrollHandler,
   useSharedValue,
@@ -62,7 +70,7 @@ export default function Home() {
       params: product,
     });
   };
-  const addProduct = () => {
+  const onPressAddProduct = () => {
     router.push({
       pathname: "/shop/categories",
     });
@@ -106,9 +114,13 @@ export default function Home() {
           <Card {...product} key={product.id} />
         ))}*/}
       </ScrollView>
-      <Pressable onPress={addProduct} style={styles.button}>
+      <TouchableOpacity onPress={onPressAddProduct} style={styles.button}>
         <Text style={styles.buttonText}>Agregar productos</Text>
-      </Pressable>
+      </TouchableOpacity>
+
+      {/*<Pressable onPress={addProduct} style={styles.button}>
+        <Text style={styles.buttonText}>Agregar productos</Text>
+      </Pressable>*/}
     </Animated.View>
   );
 }
