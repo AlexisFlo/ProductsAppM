@@ -7,6 +7,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  input: {
+    borderColor: "#556f75",
+    width: "90%",
+    borderWidth: 1,
+    borderRadius: 10,
+    padding: 10,
+  },
   button: {
     padding: 20,
     backgroundColor: "#3B5249",
@@ -25,9 +32,9 @@ const styles = StyleSheet.create({
 export default function Categories() {
   return (
     <View style={styles.container}>
-      <TextInput placeholder="Producto" />
-      <TextInput placeholder="Cantidad" keyboardType="numeric" />
-      <TextInput placeholder="$ Precio" keyboardType="numeric" />
+      <TextInput placeholder="Producto" style={styles.input} />
+      <TextInput placeholder="Cantidad" style={styles.input} keyboardType="numeric" />
+      <TextInput placeholder="$ Precio" style={styles.input} keyboardType="numeric" />
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Guardar</Text>
       </TouchableOpacity>
