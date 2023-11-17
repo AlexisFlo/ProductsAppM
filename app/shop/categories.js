@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     padding: 10,
+    margin: 15,
   },
   button: {
     padding: 20,
