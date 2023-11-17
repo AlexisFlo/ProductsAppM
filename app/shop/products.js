@@ -29,7 +29,7 @@ export default function Products() {
   const router = useRouter();
   const params = useLocalSearchParams();
   const viewableItems = useSharedValue([]);
-  const { title, subtitle, image, price } = params;
+  // const { title, subtitle, image, price } = params;
 
   const renderItem = ({ item, index }) => (
     <ProductItem item={item} index={index} viewableItems={viewableItems} />
@@ -43,12 +43,12 @@ export default function Products() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.product}>
+      {/*<View style={styles.product}>
         <Text>{title}</Text>
         <Text>{subtitle}</Text>
         <Text>{image}</Text>
         <Text>{price}</Text>
-      </View>
+      </View>*/}
       <ListHeaderComponent />
       <FlatList
         data={data}
