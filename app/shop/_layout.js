@@ -36,6 +36,19 @@ export default function Layout() {
           tabBarLabel: "Add Products",
         }}
       />
+      <Tabs.Screen
+        name="inventory"
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name={focused ? "list-circle" : "list-circle-outline"}
+              size={22}
+              color="#85A43D"
+            />
+          ),
+          tabBarLabel: "Inventory",
+        }}
+      />
     </Tabs>
   );
 }
