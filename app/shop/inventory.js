@@ -1,5 +1,5 @@
-import { Picker } from "@react-native-picker/picker";
-import { useState } from "react";
+// import { Picker } from "@react-native-picker/picker";
+// import { useState } from "react";
 import { View, TextInput, StyleSheet, TouchableOpacity, Text } from "react-native";
 
 const styles = StyleSheet.create({
@@ -31,11 +31,17 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
 });
-
-export default function Inventory() {
-  const [selectedValue, setSelectedValue] = useState();
+// "productList"
+export default function ProductList() {
+  // const [selectedValue, setSelectedValue] = useState();
   return (
     <View style={styles.container}>
+      <Text>Lista de compra</Text>
+      {/* 
+        Los datos del inventario, inusmo se obtienen de la base de datos y se verán en una tabla o una flatlist
+        con un botón para editar y otro para eliminar 
+      */}
+      {/* 
       <TextInput placeholder="Producto" style={styles.input} />
       <TextInput placeholder="Cantidad" style={styles.input} keyboardType="numeric" />
       <TextInput placeholder="$ Precio" style={styles.input} keyboardType="numeric" />
@@ -50,6 +56,7 @@ export default function Inventory() {
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Guardar</Text>
       </TouchableOpacity>
+      */}
     </View>
   );
 }

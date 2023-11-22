@@ -28,7 +28,7 @@ export default function Layout() {
         options={{
           tabBarIcon: ({ focused }) => (
             <Ionicons
-              name={focused ? "list-circle" : "list-circle-outline"}
+              name={focused ? "add-circle" : "add-circle-outline"}
               size={22}
               color="#85A43D"
             />
@@ -37,7 +37,7 @@ export default function Layout() {
         }}
       />
       <Tabs.Screen
-        name="inventory"
+        name="productList" // "productList"
         options={{
           tabBarIcon: ({ focused }) => (
             <Ionicons
@@ -46,7 +46,7 @@ export default function Layout() {
               color="#85A43D"
             />
           ),
-          tabBarLabel: "Inventory",
+          tabBarLabel: "Product List",
         }}
       />
     </Tabs>
