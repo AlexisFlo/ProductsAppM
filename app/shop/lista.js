@@ -1,6 +1,7 @@
 // import { Picker } from "@react-native-picker/picker";
 // import { useState } from "react";
 import { View, TextInput, StyleSheet, TouchableOpacity, Text } from "react-native";
+import { Card } from "../components";
 
 const styles = StyleSheet.create({
   container: {
@@ -37,6 +38,7 @@ export default function List() {
   return (
     <View style={styles.container}>
       <Text>Lista de compra</Text>
+      <Card />
       {/* 
         En esta pantalla se debe mostrar la lista de productos que el usuario ha agregado a su lista de compra, y se tendrá la opción de que agregue datos a esta.
       */}
