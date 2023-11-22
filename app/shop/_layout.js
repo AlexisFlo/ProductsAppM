@@ -33,11 +33,11 @@ export default function Layout() {
               color="#85A43D"
             />
           ),
-          tabBarLabel: "Add Products",
+          tabBarLabel: "Hacer lista",
         }}
       />
       <Tabs.Screen
-        name="productList" // "productList"
+        name="lista"
         options={{
           tabBarIcon: ({ focused }) => (
             <Ionicons
@@ -46,7 +46,7 @@ export default function Layout() {
               color="#85A43D"
             />
           ),
-          tabBarLabel: "Product List",
+          tabBarLabel: "Lista",
         }}
       />
     </Tabs>
