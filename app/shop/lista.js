@@ -24,6 +24,27 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#B9C8DF",
+    borderRadius: 20,
+    padding: 20,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5
+  },
+  modalButton: {
+    backgroundColor: "#4E9F3D", // Cambia el color de fondo del botón
+    padding: 10, // Añade un padding al botón
+    borderRadius: 5, // Añade bordes redondeados al botón
+    marginTop: 10, // Añade un margen en la parte superior del botón
+  },
+  modalButtonText: {
+    color: "#fff", // Cambia el color del texto del botón
+    fontSize: 16, // Cambia el tamaño de la fuente del texto del botón
   },
 });
 
@@ -90,10 +111,18 @@ const List = () => {
         <View style={styles.modal}>
           <Text>Seleccionaste el elemento: {selectedItem}</Text>
           <Pressable
+            style={styles.modalButton}
             onPress={() => {
               setModalVisible(!modalVisible);
             }}>
-            <Text>Cerrar</Text>
+            <Text style={styles.modalButtonText}>Guardar</Text>
+          </Pressable>
+          <Pressable
+            style={styles.modalButton}
+            onPress={() => {
+              setModalVisible(!modalVisible);
+            }}>
+            <Text style={styles.modalButtonText}>Cerrar</Text>
           </Pressable>
         </View>
       </Modal>
