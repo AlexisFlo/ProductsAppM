@@ -1,6 +1,6 @@
 import { FlashList } from "@shopify/flash-list";
 import React, { useRef, useState } from "react";
-import { View, Text, Pressable, LayoutAnimation, StyleSheet, Modal } from "react-native";
+import { View, Text, Pressable, StyleSheet, Modal } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
   },
   modal: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
@@ -82,17 +82,17 @@ const List = () => {
       />
       <Modal
         animationType="slide"
-        transparent={true}
+        transparent
         visible={modalVisible}
         onRequestClose={() => {
           setModalVisible(!modalVisible);
-        }}
-      >
+        }}>
         <View style={styles.modal}>
           <Text>Seleccionaste el elemento: {selectedItem}</Text>
-          <Pressable onPress={() => {
-            setModalVisible(!modalVisible);  
-          }}>
+          <Pressable
+            onPress={() => {
+              setModalVisible(!modalVisible);
+            }}>
             <Text>Cerrar</Text>
           </Pressable>
         </View>
