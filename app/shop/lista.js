@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#B9C8DF",
+    backgroundColor: "#AFC0B9",
     borderRadius: 20,
     padding: 20,
     shadowColor: "#000",
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   modalButton: {
-    backgroundColor: "#4E9F3D", // Cambia el color de fondo del botón
+    backgroundColor: "#637E72", // Cambia el color de fondo del botón
     padding: 10, // Añade un padding al botón
     borderRadius: 5, // Añade bordes redondeados al botón
     marginTop: 10, // Añade un margen en la parte superior del botón
