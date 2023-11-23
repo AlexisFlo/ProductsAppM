@@ -37,7 +37,7 @@ export default function Categories() {
   return (
     <View style={styles.container}>
       <TextInput placeholder="Producto" style={styles.input} />
-      <TextInput placeholder="Cantidad" style={styles.input} keyboardType="numeric" />
+      <TextInput placeholder="Cantidad pedido" style={styles.input} keyboardType="numeric" />
       <TextInput placeholder="$ Precio" style={styles.input} keyboardType="numeric" />
       <Text>Categoría</Text>
       <Picker
@@ -47,6 +47,7 @@ export default function Categories() {
         <Picker.Item label="Vegetales" value="Veg" />
         <Picker.Item label="Frutas" value="Fru" />
       </Picker>
+      <TextInput placeholder="Proveedor" style={styles.input} />
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Guardar</Text>
       </TouchableOpacity>
