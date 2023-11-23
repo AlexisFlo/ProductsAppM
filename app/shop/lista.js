@@ -1,6 +1,6 @@
 import { FlashList } from "@shopify/flash-list";
 import React, { useRef, useState } from "react";
-import { View, Text, Pressable, LayoutAnimation, StyleSheet } from "react-native";
+import { View, Text, Pressable, LayoutAnimation, StyleSheet, Modal } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -20,13 +20,21 @@ const styles = StyleSheet.create({
     padding: 20,
     textAlign: "center",
   },
+  modal: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 const List = () => {
   const [data, setData] = useState([1, 2, 3, 4, 5]);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const list = useRef(null);
 
+  /*
   const removeItem = (item) => {
     setData(
       data.filter((dataItem) => {
@@ -37,12 +45,14 @@ const List = () => {
 
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
   };
+  */
 
   const renderItem = ({ item }) => {
     return (
       <Pressable
         onPress={() => {
-          removeItem(item);
+          setSelectedItem(item);
+          setModalVisible(true);
         }}>
         <View>
           <Text>Cell Id: {item}</Text>
@@ -70,6 +80,23 @@ const List = () => {
         data={data}
         contentContainerStyle={styles.contentContainerList}
       />
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={styles.modal}>
+          <Text>Seleccionaste el elemento: {selectedItem}</Text>
+          <Pressable onPress={() => {
+            setModalVisible(!modalVisible);  
+          }}>
+            <Text>Cerrar</Text>
+          </Pressable>
+        </View>
+      </Modal>
     </View>
   );
 };
