@@ -1,13 +1,6 @@
+import { Ionicons } from "@expo/vector-icons";
 import { Stack, router } from "expo-router";
-import {
-  View,
-  StyleSheet,
-  ScrollView,
-  Dimensions,
-  Pressable,
-  Text,
-  TouchableOpacity,
-} from "react-native";
+import { View, StyleSheet, ScrollView, Dimensions, Text, TouchableOpacity } from "react-native";
 import Animated, {
   useAnimatedScrollHandler,
   useSharedValue,
@@ -38,6 +31,9 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fpntWeight: "bold",
     color: "#fff",
+  },
+  icon: {
+    marginRight: 10,
   },
 });
 
@@ -115,7 +111,8 @@ export default function Home() {
         ))}*/}
       </ScrollView>
       <TouchableOpacity onPress={onPressAddProduct} style={styles.button}>
-        <Text style={styles.buttonText}>Agregar productos</Text>
+        <Ionicons name="basket" size={22} color="#85A43D" style={styles.icon} />
+        <Text style={styles.buttonText}>Hacer tú lista de compra</Text>
       </TouchableOpacity>
 
       {/*<Pressable onPress={addProduct} style={styles.button}>

@@ -1,6 +1,6 @@
 import { FlashList } from "@shopify/flash-list";
 import React, { useRef, useState } from "react";
-import { View, Text, Pressable, LayoutAnimation,StyleSheet } from "react-native";
+import { View, Text, Pressable, LayoutAnimation, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
