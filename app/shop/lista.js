@@ -1,6 +1,6 @@
 import { FlashList } from "@shopify/flash-list";
 import React, { useRef, useState } from "react";
-import { View, Text, Pressable, LayoutAnimation, StyleSheet } from "react-native";
+import { View, Text, Pressable, LayoutAnimation,StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
   },
   contentContainerList: {
     paddingTop: 15,
+    paddingLeft: 15,
   },
   header: {
     fontSize: 22,
@@ -52,12 +53,12 @@ const List = () => {
 
   const ListHeaderComponent = () => (
     <View style={styles.headerContainer}>
-      <Text style={styles.header}>Lista compra</Text>
+      <Text style={styles.header}>Productos a comprar</Text>
     </View>
   );
 
   return (
-    <View>
+    <View style={styles.container}>
       <ListHeaderComponent />
       <FlashList
         ref={list}
