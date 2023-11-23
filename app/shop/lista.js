@@ -1,10 +1,9 @@
-import { FlashList } from "@shopify/flash-list";
 import React, { useRef, useState } from "react";
-import { LayoutAnimation, Pressable, Text } from "react-native";
-import { View } from "react-native-web";
+import { View, Text, Pressable, LayoutAnimation } from "react-native";
+import { FlashList } from "@shopify/flash-list";
 
 const List = () => {
-  const [data, setData] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  const [data, setData] = useState([1, 2, 3, 4, 5]);
 
   const list = useRef(null);
 
@@ -23,16 +22,15 @@ const List = () => {
     return (
       <Pressable
         onPress={() => {
-          // removeItem(item);
-          console.warn("pressed");
-        }}>
+          removeItem(item);
+        }}
+      >
         <View>
-          <Text>Cell Id:</Text>
+          <Text>Cell Id: {item}</Text>
         </View>
       </Pressable>
-    );
-  };
-
+    )
+  }
   return (
     <FlashList
       ref={list}
